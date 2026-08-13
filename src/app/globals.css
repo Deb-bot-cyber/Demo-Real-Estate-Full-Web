@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'TASA Orbiter', system-ui, -apple-system, sans-serif;
+    --font-serif: 'TASA Orbiter', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #18181b;
+    background-color: #faf9f5;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-serif, .font-heading, em, i, .italic, [class*="italic"] {
+    font-family: 'TASA Orbiter', system-ui, -apple-system, sans-serif !important;
+    font-style: normal !important;
+  }
+}
+
+/* Custom Utilities for Light Theme & Primary Orange Aesthetic */
+@utility glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(243, 244, 246, 0.8);
+}
+
+@utility glass-dark {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+@utility text-primary-orange {
+  color: #f97316;
+}
+
+@utility bg-primary-orange {
+  background-color: #f97316;
+}
+
+@utility border-primary-orange {
+  border-color: #f97316;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f2ec;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6d3d1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f97316;
+}
+
+/* Custom focus ring */
+*:focus-visible {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+}
+
+/* Hide scrollbar for clean carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
