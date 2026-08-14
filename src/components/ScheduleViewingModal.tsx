@@ -44,9 +44,9 @@ export default function ScheduleViewingModal({
     };
 
     try {
-      const stored = localStorage.getItem('aura_leads');
+      const stored = localStorage.getItem('shri_laxmi_leads') || localStorage.getItem('aura_leads');
       const leads = stored ? JSON.parse(stored) : [];
-      localStorage.setItem('aura_leads', JSON.stringify([newLead, ...leads]));
+      localStorage.setItem('shri_laxmi_leads', JSON.stringify([newLead, ...leads]));
     } catch {
       // fallback
     }

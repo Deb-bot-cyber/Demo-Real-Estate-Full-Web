@@ -41,9 +41,9 @@ export default function ContactSection({ prefilledPropertyTitle }: ContactSectio
     };
 
     try {
-      const stored = localStorage.getItem('aura_leads');
+      const stored = localStorage.getItem('shri_laxmi_leads') || localStorage.getItem('aura_leads');
       const leads = stored ? JSON.parse(stored) : INITIAL_LEADS;
-      localStorage.setItem('aura_leads', JSON.stringify([newLead, ...leads]));
+      localStorage.setItem('shri_laxmi_leads', JSON.stringify([newLead, ...leads]));
     } catch {
       // fallback if SSR or restricted
     }
@@ -259,7 +259,7 @@ export default function ContactSection({ prefilledPropertyTitle }: ContactSectio
                   </div>
                   <div>
                     <span className="text-[10px] text-stone-400 uppercase tracking-widest block font-semibold">Private Advisory Email</span>
-                    <a href="mailto:advisors@aura-estates.in" className="text-stone-700 hover:text-orange-600 transition-colors">advisors@aura-estates.in</a>
+                    <a href="mailto:advisors@shrilaxmiproperty.com" className="text-stone-700 hover:text-orange-600 transition-colors">advisors@shrilaxmiproperty.com</a>
                   </div>
                 </div>
 

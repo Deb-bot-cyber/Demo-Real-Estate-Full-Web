@@ -160,16 +160,16 @@ export default function AdminPage() {
   // Load state on mount
   useEffect(() => {
     try {
-      const storedProps = localStorage.getItem('aura_properties');
+      const storedProps = localStorage.getItem('shri_laxmi_properties') || localStorage.getItem('aura_properties');
       setProperties(storedProps ? JSON.parse(storedProps) : INITIAL_PROPERTIES);
 
-      const storedLocs = localStorage.getItem('aura_locations');
+      const storedLocs = localStorage.getItem('shri_laxmi_locations') || localStorage.getItem('aura_locations');
       setLocations(storedLocs ? JSON.parse(storedLocs) : INITIAL_LOCATIONS);
 
-      const storedReviews = localStorage.getItem('aura_testimonials');
+      const storedReviews = localStorage.getItem('shri_laxmi_testimonials') || localStorage.getItem('aura_testimonials');
       setTestimonials(storedReviews ? JSON.parse(storedReviews) : INITIAL_TESTIMONIALS);
 
-      const storedLeads = localStorage.getItem('aura_leads');
+      const storedLeads = localStorage.getItem('shri_laxmi_leads') || localStorage.getItem('aura_leads');
       setLeads(storedLeads ? JSON.parse(storedLeads) : INITIAL_LEADS);
     } catch {
       setProperties(INITIAL_PROPERTIES);
@@ -178,7 +178,7 @@ export default function AdminPage() {
       setLeads(INITIAL_LEADS);
     }
 
-    if (localStorage.getItem('aura_admin_logged_in') === 'true') {
+    if (localStorage.getItem('shri_laxmi_admin_logged_in') === 'true' || localStorage.getItem('aura_admin_logged_in') === 'true') {
       setIsAuthenticated(true);
     }
   }, []);
@@ -186,22 +186,22 @@ export default function AdminPage() {
   // Sync to localStorage
   const saveProperties = (data: Property[]) => {
     setProperties(data);
-    localStorage.setItem('aura_properties', JSON.stringify(data));
+    localStorage.setItem('shri_laxmi_properties', JSON.stringify(data));
   };
 
   const saveLocations = (data: LocationInfo[]) => {
     setLocations(data);
-    localStorage.setItem('aura_locations', JSON.stringify(data));
+    localStorage.setItem('shri_laxmi_locations', JSON.stringify(data));
   };
 
   const saveTestimonials = (data: Testimonial[]) => {
     setTestimonials(data);
-    localStorage.setItem('aura_testimonials', JSON.stringify(data));
+    localStorage.setItem('shri_laxmi_testimonials', JSON.stringify(data));
   };
 
   const saveLeads = (data: LeadInquiry[]) => {
     setLeads(data);
-    localStorage.setItem('aura_leads', JSON.stringify(data));
+    localStorage.setItem('shri_laxmi_leads', JSON.stringify(data));
   };
 
   // Quick Add New Location Handler
@@ -234,7 +234,7 @@ export default function AdminPage() {
     if (passcode === 'admin123') {
       setIsAuthenticated(true);
       setAuthError('');
-      localStorage.setItem('aura_admin_logged_in', 'true');
+      localStorage.setItem('shri_laxmi_admin_logged_in', 'true');
     } else {
       setAuthError('Invalid password. Access denied (Password: admin123).');
     }
@@ -500,7 +500,7 @@ export default function AdminPage() {
             <div className="w-14 h-14 rounded-2xl bg-orange-50 border border-orange-200 text-orange-600 flex items-center justify-center mx-auto mb-4 shadow-sm">
               <Lock className="w-7 h-7" />
             </div>
-            <h1 className="text-2xl font-bold tracking-tight text-slate-900">AURA Admin Portal</h1>
+            <h1 className="text-2xl font-bold tracking-tight text-slate-900">Shri Laxmi Property Admin Portal</h1>
             <p className="text-xs text-slate-500">Enter administrator password to access management controls.</p>
           </div>
 
@@ -972,10 +972,10 @@ export default function AdminPage() {
               <Sparkles className="w-5 h-5" />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold tracking-tight text-slate-900 leading-none">
-                untlip <span className="text-orange-600 text-xs font-semibold">AURA</span>
+              <span className="text-base font-bold tracking-tight text-slate-900 leading-none">
+                Shri Laxmi <span className="text-orange-600 text-xs font-semibold">Property</span>
               </span>
-              <span className="text-[10px] text-slate-400 font-medium">Real Estate Portal</span>
+              <span className="text-[10px] text-slate-400 font-medium">Admin Portal</span>
             </div>
           </Link>
 
@@ -1066,13 +1066,14 @@ export default function AdminPage() {
         {/* Bottom Sidebar Logout Widget */}
         <div className="space-y-4 pt-6 border-t border-slate-100">
           <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-4 border border-orange-100 space-y-2">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-orange-600 block">AURA Partner Portal</span>
-            <p className="text-xs text-slate-600 font-medium">Managing ₹{totalValuation} Cr in Indian Luxury Real Estate.</p>
+            <span className="text-[10px] font-bold uppercase tracking-wider text-orange-600 block">Shri Laxmi Admin Portal</span>
+            <p className="text-xs text-slate-600 font-medium">Managing ₹{totalValuation} Cr in Indian Real Estate.</p>
           </div>
 
           <button
             onClick={() => {
               setIsAuthenticated(false);
+              localStorage.removeItem('shri_laxmi_admin_logged_in');
               localStorage.removeItem('aura_admin_logged_in');
             }}
             className="w-full flex items-center space-x-3 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-500 hover:text-red-600 hover:bg-red-50 transition-colors cursor-pointer"
@@ -1243,10 +1244,10 @@ export default function AdminPage() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2">
-                  <button onClick={() => exportToCSV(getFormattedPropertiesForExport(), 'aura_properties_report')} className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
+                  <button onClick={() => exportToCSV(getFormattedPropertiesForExport(), 'shri_laxmi_properties_report')} className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
                     <Download className="w-3.5 h-3.5" /> CSV
                   </button>
-                  <button onClick={() => exportToExcel(getFormattedPropertiesForExport(), 'aura_properties_excel')} className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
+                  <button onClick={() => exportToExcel(getFormattedPropertiesForExport(), 'shri_laxmi_properties_excel')} className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
                     <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-600" /> Excel
                   </button>
                   <button onClick={() => exportToPDF('Properties Portfolio Catalog', getFormattedPropertiesForExport())} className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
@@ -1367,10 +1368,10 @@ export default function AdminPage() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2">
-                  <button onClick={() => exportToCSV(getFormattedCitiesForExport(), 'aura_cities_report')} className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
+                  <button onClick={() => exportToCSV(getFormattedCitiesForExport(), 'shri_laxmi_cities_report')} className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
                     <Download className="w-3.5 h-3.5" /> CSV
                   </button>
-                  <button onClick={() => exportToExcel(getFormattedCitiesForExport(), 'aura_cities_excel')} className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
+                  <button onClick={() => exportToExcel(getFormattedCitiesForExport(), 'shri_laxmi_cities_excel')} className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
                     <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-600" /> Excel
                   </button>
                   <button onClick={() => exportToPDF('Cities & Locations Catalog', getFormattedCitiesForExport())} className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
@@ -1449,10 +1450,10 @@ export default function AdminPage() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2">
-                  <button onClick={() => exportToCSV(getFormattedLeadsForExport(), 'aura_leads_export')} className="px-4 py-2 rounded-xl bg-orange-500 hover:bg-orange-600 text-white text-xs uppercase font-bold tracking-wider flex items-center gap-1.5 transition-all shadow-md shadow-orange-500/20 cursor-pointer">
+                  <button onClick={() => exportToCSV(getFormattedLeadsForExport(), 'shri_laxmi_leads_export')} className="px-4 py-2 rounded-xl bg-orange-500 hover:bg-orange-600 text-white text-xs uppercase font-bold tracking-wider flex items-center gap-1.5 transition-all shadow-md shadow-orange-500/20 cursor-pointer">
                     <Download className="w-4 h-4" /> EXPORT CSV
                   </button>
-                  <button onClick={() => exportToExcel(getFormattedLeadsForExport(), 'aura_leads_excel')} className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs uppercase font-bold tracking-wider flex items-center gap-1.5 transition-all shadow-md cursor-pointer">
+                  <button onClick={() => exportToExcel(getFormattedLeadsForExport(), 'shri_laxmi_leads_excel')} className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs uppercase font-bold tracking-wider flex items-center gap-1.5 transition-all shadow-md cursor-pointer">
                     <FileSpreadsheet className="w-4 h-4" /> EXPORT EXCEL
                   </button>
                   <button onClick={() => exportToPDF('Client Leads & Viewing Inquiries Report', getFormattedLeadsForExport())} className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-900 text-white text-xs uppercase font-bold tracking-wider flex items-center gap-1.5 transition-all shadow-md cursor-pointer">
@@ -1538,10 +1539,10 @@ export default function AdminPage() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2">
-                  <button onClick={() => exportToCSV(getFormattedReviewsForExport(), 'aura_reviews_report')} className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
+                  <button onClick={() => exportToCSV(getFormattedReviewsForExport(), 'shri_laxmi_reviews_report')} className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
                     <Download className="w-3.5 h-3.5" /> CSV
                   </button>
-                  <button onClick={() => exportToExcel(getFormattedReviewsForExport(), 'aura_reviews_excel')} className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
+                  <button onClick={() => exportToExcel(getFormattedReviewsForExport(), 'shri_laxmi_reviews_excel')} className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
                     <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-600" /> Excel
                   </button>
                   <button onClick={() => exportToPDF('Client Testimonials & Ratings Report', getFormattedReviewsForExport())} className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">

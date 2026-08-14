@@ -31,12 +31,12 @@ export default function Preloader() {
             <div className="flex items-center space-x-3 mb-4">
               <span className="h-[2px] w-8 bg-orange-500" />
               <span className="tracking-[0.35em] text-xs font-semibold text-orange-600 uppercase">
-                Estates
+                Property
               </span>
               <span className="h-[2px] w-8 bg-orange-500" />
             </div>
-            <h1 className="text-4xl font-serif tracking-[0.2em] uppercase font-light text-stone-900">
-              A U R A
+            <h1 className="text-3xl sm:text-4xl font-serif tracking-[0.18em] uppercase font-light text-stone-900 text-center">
+              SHRI LAXMI
             </h1>
             <motion.div
               className="mt-6 h-[1px] bg-stone-200 w-32 overflow-hidden relative"

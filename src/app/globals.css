@@ -17,6 +17,11 @@
     font-family: 'TASA Orbiter', system-ui, -apple-system, sans-serif !important;
     font-style: normal !important;
   }
+
+  .font-signature {
+    font-family: var(--font-signature), 'Caveat', 'Dancing Script', cursive !important;
+    font-style: normal !important;
+  }
 }
 
 /* Custom Utilities for Light Theme & Primary Orange Aesthetic */

@@ -15,7 +15,7 @@ export default function Locations({ onSelectLocation }: LocationsProps) {
 
   useEffect(() => {
     try {
-      const stored = localStorage.getItem('aura_locations');
+      const stored = localStorage.getItem('shri_laxmi_locations') || localStorage.getItem('aura_locations');
       if (stored) {
         setLocationsList(JSON.parse(stored));
       }

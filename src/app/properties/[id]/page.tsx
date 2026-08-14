@@ -47,7 +47,7 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
 
   useEffect(() => {
     try {
-      const stored = localStorage.getItem('aura_properties');
+      const stored = localStorage.getItem('shri_laxmi_properties') || localStorage.getItem('aura_properties');
       const propertyList: Property[] = stored ? JSON.parse(stored) : INITIAL_PROPERTIES;
       setAllProperties(propertyList);
 
@@ -88,8 +88,8 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
     };
 
     try {
-      const existingLeads = JSON.parse(localStorage.getItem('aura_leads') || '[]');
-      localStorage.setItem('aura_leads', JSON.stringify([newLead, ...existingLeads]));
+      const existingLeads = JSON.parse(localStorage.getItem('shri_laxmi_leads') || localStorage.getItem('aura_leads') || '[]');
+      localStorage.setItem('shri_laxmi_leads', JSON.stringify([newLead, ...existingLeads]));
     } catch {
       // Fallback
     }

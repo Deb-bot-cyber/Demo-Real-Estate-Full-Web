@@ -70,7 +70,7 @@ export default function About() {
             </p>
 
             <p className="text-stone-500 text-sm font-light leading-relaxed">
-              Founded on principles of discretion, architectural appreciation, and data-backed market intelligence, AURA Estates serves as a trusted partner for discerning buyers and sellers worldwide.
+              Founded on principles of discretion, architectural appreciation, and data-backed market intelligence, Shri Laxmi Property serves as a trusted partner for discerning buyers and sellers worldwide.
             </p>
 
             {/* Key Value Badges */}

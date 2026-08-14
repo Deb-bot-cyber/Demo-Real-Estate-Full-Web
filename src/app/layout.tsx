@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans, Playfair_Display, Caveat } from "next/font/google";
 import "@fontsource/tasa-orbiter/index.css";
 import "./globals.css";
 
@@ -16,32 +16,40 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+const caveat = Caveat({
+  variable: "--font-signature",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "AURA Estates | Luxury Real Estate & Exceptional Properties",
+  title: "Shri Laxmi Property | Premier Real Estate & Exceptional Properties",
   description:
-    "Discover exceptional homes, investment opportunities, and premium properties with AURA Estates. Explore curated real estate across the world's most desirable locations.",
+    "Discover exceptional homes, investment opportunities, and premium properties with Shri Laxmi Property. Explore curated real estate across India's most desirable locations.",
   keywords: [
+    "Shri Laxmi Property",
+    "Shri Laxmi Real Estate",
     "Luxury Real Estate",
     "High-end Properties",
     "Modern Penthouses",
     "Architectural Homes",
-    "AURA Estates",
-    "Miami Luxury Real Estate",
-    "Los Angeles Mansions",
+    "Mumbai Luxury Real Estate",
+    "Delhi NCR Mansions",
   ],
-  authors: [{ name: "AURA Luxury Real Estate" }],
+  authors: [{ name: "Shri Laxmi Property" }],
   openGraph: {
-    title: "AURA Estates | Luxury Real Estate & Exceptional Properties",
+    title: "Shri Laxmi Property | Premier Real Estate & Exceptional Properties",
     description:
-      "Curated luxury real estate across the world's most desirable locations.",
-    url: "https://aura-estates.com",
-    siteName: "AURA Estates",
+      "Curated luxury real estate across India's most desirable locations.",
+    url: "https://shrilaxmiproperty.com",
+    siteName: "Shri Laxmi Property",
     images: [
       {
         url: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1600&auto=format&fit=crop",
         width: 1200,
         height: 630,
-        alt: "AURA Estates Luxury Architecture",
+        alt: "Shri Laxmi Property Architecture",
       },
     ],
     locale: "en_US",
@@ -49,9 +57,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AURA Estates | Luxury Real Estate",
+    title: "Shri Laxmi Property | Luxury Real Estate",
     description:
-      "Curated luxury real estate across the world's most desirable locations.",
+      "Curated luxury real estate across India's most desirable locations.",
     images: [
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1600&auto=format&fit=crop",
     ],
@@ -70,7 +78,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${jakarta.variable} ${playfair.variable} scroll-smooth antialiased`}
+      className={`${jakarta.variable} ${playfair.variable} ${caveat.variable} scroll-smooth antialiased`}
     >
       <head>
         <link

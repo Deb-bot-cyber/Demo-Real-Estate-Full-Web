@@ -65,7 +65,7 @@ export function exportToExcel(data: Record<string, any>[], filename: string) {
       </style>
     </head>
     <body>
-      <h2>AURA Luxury Real Estate - Export Report: ${filename}</h2>
+      <h2>Shri Laxmi Property - Export Report: ${filename}</h2>
       <table>
         <thead>
           <tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr>
@@ -128,7 +128,7 @@ export function exportToPDF(title: string, data: Record<string, any>[]) {
     <body>
       <div class="header">
         <div>
-          <div class="brand">AURA REAL ESTATE</div>
+          <div class="brand">SHRI LAXMI PROPERTY</div>
           <div class="title">${title}</div>
         </div>
         <div class="timestamp">Generated: ${new Date().toLocaleString()}</div>
@@ -146,7 +146,7 @@ export function exportToPDF(title: string, data: Record<string, any>[]) {
       </table>
 
       <div class="footer">
-        © 2026 AURA Luxury Real Estate India. Confidential Client & Asset Report.
+        © 2026 Shri Laxmi Property. Confidential Client & Asset Report.
       </div>
 
       <script>

@@ -264,7 +264,7 @@ export const LOCATIONS: LocationInfo[] = INITIAL_LOCATIONS;
 export const INITIAL_TESTIMONIALS: Testimonial[] = [
   {
     id: '1',
-    quote: 'From our first consultation to receiving the keys to our Worli Sea Face residence, AURA provided unmatched discretion and market clarity. They negotiated an off-market deal flawlessly.',
+    quote: 'From our first consultation to receiving the keys to our Worli Sea Face residence, Shri Laxmi Property provided unmatched discretion and market clarity. They negotiated an off-market deal flawlessly.',
     name: 'Rajesh & Priya Sharma',
     role: 'Industrialist • Worli, Mumbai',
     location: 'Mumbai, MH',
@@ -274,7 +274,7 @@ export const INITIAL_TESTIMONIALS: Testimonial[] = [
   },
   {
     id: '2',
-    quote: 'Finding an authentic restored heritage villa in North Goa with clear titles can be daunting. AURA’s advisory team handled legal due diligence and closing with complete transparency.',
+    quote: 'Finding an authentic restored heritage villa in North Goa with clear titles can be daunting. Shri Laxmi Property’s advisory team handled legal due diligence and closing with complete transparency.',
     name: 'Vikramaditya Singhania',
     role: 'Tech Founder • Golf Course Rd',
     location: 'Gurgaon, HR',
@@ -284,13 +284,33 @@ export const INITIAL_TESTIMONIALS: Testimonial[] = [
   },
   {
     id: '3',
-    quote: 'As an NRI managing real estate assets in India from Singapore, AURA’s yield analytics and property management services give me complete peace of mind.',
+    quote: 'As an NRI managing real estate assets in India from Singapore, Shri Laxmi Property’s yield analytics and property management services give me complete peace of mind.',
     name: 'Ananya Reddy',
     role: 'Venture Capital Partner',
     location: 'Bengaluru, KA',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop',
     propertyPurchased: 'Sadashivnagar Glass House'
+  },
+  {
+    id: '4',
+    quote: 'Shri Laxmi Property secured our dream sky penthouse at DLF Camellias. Their market insight and white-glove negotiation saved us over ₹3.5 Cr on the transaction.',
+    name: 'Rohan & Gayatri Malhotra',
+    role: 'Managing Director • Private Equity',
+    location: 'Gurgaon, HR',
+    rating: 5,
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop',
+    propertyPurchased: 'Camellias Sky Mansion'
+  },
+  {
+    id: '5',
+    quote: 'Selling our family estate in Alibaug required utmost confidentiality. The team handled private viewings discreetly and closed with a ultra-high net worth buyer within 3 weeks.',
+    name: 'Sameer & Sunita Merchant',
+    role: 'Group Chairman • Business Family',
+    location: 'Mumbai, MH',
+    rating: 5,
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop',
+    propertyPurchased: 'Alibaug Oceanfront Estate'
   }
 ];
 

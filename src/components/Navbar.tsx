@@ -51,17 +51,17 @@ export default function Navbar({ onOpenScheduleModal, favoritesCount = 0 }: Navb
           <Link
             href="/"
             className="flex items-center space-x-3 group focus:outline-none"
-            aria-label="AURA Real Estate Homepage"
+            aria-label="Shri Laxmi Property Homepage"
           >
             <div className="w-9 h-9 border border-orange-500 flex items-center justify-center relative transition-transform duration-300 group-hover:rotate-45">
               <div className="w-4 h-4 bg-orange-500" />
             </div>
             <div className="flex flex-col">
-              <span className={`text-xl font-serif tracking-[0.25em] font-light uppercase leading-none ${scrolled ? 'text-stone-900' : 'text-white'}`}>
-                A U R A
+              <span className={`text-lg sm:text-xl font-serif tracking-[0.18em] font-light uppercase leading-none ${scrolled ? 'text-stone-900' : 'text-white'}`}>
+                SHRI LAXMI
               </span>
               <span className="text-[9px] tracking-[0.3em] text-orange-500 uppercase font-semibold mt-1">
-                Luxury Real Estate
+                Property
               </span>
             </div>
           </Link>
@@ -172,7 +172,7 @@ export default function Navbar({ onOpenScheduleModal, favoritesCount = 0 }: Navb
                 Schedule a Viewing
               </button>
               <div className="text-center text-xs text-stone-500 pt-2">
-                © 2026 AURA Luxury Real Estate. All rights reserved.
+                © 2026 Shri Laxmi Property. All rights reserved.
               </div>
             </div>
           </motion.div>

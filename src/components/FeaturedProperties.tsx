@@ -27,7 +27,7 @@ export default function FeaturedProperties({
 
   useEffect(() => {
     try {
-      const stored = localStorage.getItem('aura_properties');
+      const stored = localStorage.getItem('shri_laxmi_properties') || localStorage.getItem('aura_properties');
       if (stored) {
         setProperties(JSON.parse(stored));
       }

@@ -20,11 +20,11 @@ export default function Footer() {
                 <div className="w-3.5 h-3.5 bg-orange-500" />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-serif tracking-[0.25em] font-light text-white uppercase leading-none">
-                  A U R A
+                <span className="text-xl font-serif tracking-[0.18em] font-light text-white uppercase leading-none">
+                  SHRI LAXMI
                 </span>
                 <span className="text-[8px] tracking-[0.3em] text-orange-500 uppercase font-semibold mt-1">
-                  Luxury Real Estate
+                  Property
                 </span>
               </div>
             </Link>
@@ -56,7 +56,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs text-stone-400 font-light">
               <li><Link href="/#about" className="hover:text-white transition-colors">About Agency</Link></li>
               <li><Link href="/#services" className="hover:text-white transition-colors">Advisory Services</Link></li>
-              <li><Link href="/#why-us" className="hover:text-white transition-colors">The AURA Advantage</Link></li>
+              <li><Link href="/#why-us" className="hover:text-white transition-colors">The Shri Laxmi Advantage</Link></li>
               <li><Link href="/#contact" className="hover:text-white transition-colors">Careers</Link></li>
               <li><Link href="/#contact" className="hover:text-white transition-colors">Contact Advisor</Link></li>
             </ul>
@@ -79,7 +79,7 @@ export default function Footer() {
         {/* Bottom Credits & Back to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
           <div>
-            © 2026 AURA Luxury Real Estate. All rights reserved.
+            © 2026 Shri Laxmi Property. All rights reserved.
           </div>
 
           <div className="flex items-center space-x-6">
